@@ -1,0 +1,27 @@
+{
+  "name": "dj-navigator-frontend",
+  "version": "1.0.0",
+  "description": "Frontend for dj-navigator app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "nos",
+  "license": "ISC",
+  "dependencies": {
+    "dateformat": "*",
+    "events": "*",
+    "express": "*",
+    "fs": "*",
+    "lodash": "^4.17.21",
+    "pug": "^3.0.2",
+    "querystring": "*",
+    "remove-accents": "*",
+    "request": "*",
+    "request-promise": "*",
+    "url": "*",
+    "body-parser": "*"
+  },
+  "type": "module",
+  "proxy": "http://localhost:8081"
+}

@@ -1,0 +1,24 @@
+html
+    head
+        link(rel="stylesheet" type="text/css" href="styles/styles.css")
+        title dj navigator
+    body
+        div(class="grid-container")
+            div(id="spotify-search-menu", class="spotify-search")
+                include spotify-search-menu.pug
+            div(id="collection-search-menu", class="collection-search")
+                include album-search-menu
+
+            if spotifySearch === true
+                div(id="left", class="left")
+                    include spotify-albums-search-result
+                div(id="right", class="right")
+                    include tracks-search-result.pug
+
+            else if collectionSearch === true
+                div(id="left", class="left")
+                    include album-search-result.pug
+                div(id="right", class="right")
+                    include album-search-result.pug
+
+script(src='scripts/scripts.js' type="text/javascript")

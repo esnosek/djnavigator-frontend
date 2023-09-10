@@ -1,0 +1,20 @@
+p
+    img(class="album-view-image" src=album.imagePath)
+p !{album.artists}
+p !{album.name}
+p !{album.id}
+p !{album.createdDate}
+table(class="table")
+    tr
+        th track id
+        th track name
+        th tempo
+        th
+    each track in album.tracks
+        tr
+            td(class="track id")= track.id
+            td(class="track name")= track.name
+            td(class="tempo")= track.tempo
+            td(class="checkbox")
+                input(type="checkbox", id="selected" + track.spotifyId)
+                label(for="selected" + track.spotifyId) select

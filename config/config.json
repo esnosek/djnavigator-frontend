@@ -1,0 +1,12 @@
+{
+  "dev": {
+    "djNavigator": {
+      "host": "localhost",
+      "port": 8080
+    },
+    "node": {
+      "host": "localhost",
+      "port": 8081
+    }
+  }
+}
