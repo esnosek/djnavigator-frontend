@@ -20,11 +20,11 @@ app.use('/styles', express.static(__dirname + "/public/styles"));
 
 app.get('/', collectionController.index);
 app.get('/spotify-search', collectionController.spotifySearch);
-app.get('/albums-search', collectionController.albumsSearch);
 app.post('/spotify-albums', collectionController.addSpotifyAlbum);
 app.post('/spotify-tracks', collectionController.addSpotifyTrack);
 app.get('/spotify/albums/:spotifyAlbumId', collectionController.getSpotifyAlbum);
 app.get('/spotify/tracks/:spotifyTrackId', collectionController.getSpotifyTrack);
+app.get('/albums/:albumId', collectionController.getAlbum);
 
 app.listen(config.node.port, config.node.host, async function () {
     console.log(`App is listening on port ${config.node.port}...`)

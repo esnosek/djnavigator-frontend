@@ -1,0 +1,8 @@
+p SPOTIFY TRACK
+p
+    img(class="track-view-image" src=spotifyTrack.imagePath)
+p !{spotifyTrack.artists}
+p !{spotifyTrack.name}
+p tempo: !{spotifyTrack.audioFeatures.tempo}
+p
+    button(id=spotifyTrack.spotifyId class="addTrackButton") add track

@@ -2,8 +2,28 @@
     grid-area: spotify-search;
 }
 
-.collection-search {
-    grid-area: collection-search;
+.spotify-track {
+    grid-area: spotify-track;
+}
+
+.spotify-album {
+    grid-area: spotify-album;
+}
+
+.collection-albums-left {
+    grid-area: collection-albums-left;
+}
+
+.collection-albums-right {
+    grid-area: collection-albums-right;
+}
+
+.collection-left {
+    grid-area: collection-left;
+}
+
+.collection-right {
+    grid-area: collection-right;
 }
 
 .left {
@@ -30,8 +50,10 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-areas:
-    'spotify-search collection-search'
-    'left right';
+    'spotify-search spotify-search'
+    'spotify-album spotify-track'
+    'collection-albums-left collection-albums-right'
+    'collection-left collection-right';
     grid-gap: 5px;
     background-color: #265B6A;
     padding: 5px;
@@ -47,7 +69,7 @@
 .table {
     table-layout: fixed;
     border-collapse: collapse;
-    font-size: 13;
+    font-size: 13px;
     width: 100%;
 }
 .table td, .table th {
@@ -74,12 +96,6 @@
     color: white;
 }
 
-.container > img {
-    width: 100px;
-    height: 100px;
-    margin: 10px;
-}
-
 .bottom-left {
     position: absolute;
     bottom: 2px;
@@ -95,13 +111,25 @@
 }
 
 img {
-    width: 100px;
-    height: 100px;
-    margin: 10px;
+    width: 70px;
+    height: 70px;
+    margin: 0px;
 }
 
 .album-view-image {
     width: 300px;
     height: 300px;
+    margin: 10px;
+}
+
+.track-view-image {
+    width: 300px;
+    height: 300px;
+    margin: 10px;
+}
+
+.allAlbumsImage{
+    width: 100px;
+    height: 100px;
     margin: 10px;
 }

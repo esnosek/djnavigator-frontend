@@ -1,0 +1,6 @@
+p ALL ALBUMS
+div(id='albums', class="flex-container")
+    each album in albums
+        div(class="container")
+            img(id=album.id class="allAlbumsImage" src=album.imagePath)
+            div(class="bottom-left")= album.name

@@ -4,21 +4,23 @@ html
         title dj navigator
     body
         div(class="grid-container")
-            div(id="spotify-search-menu", class="spotify-search")
+            div(class="spotify-search")
                 include spotify-search-menu.pug
-            div(id="collection-search-menu", class="collection-search")
-                include album-search-menu
 
-            if spotifySearch === true
-                div(id="left", class="left")
-                    include spotify-albums-search-result
-                div(id="right", class="right")
-                    include tracks-search-result.pug
+            div(id="spotify-album" class="spotify-album")
+                if spotifySearch === true
+                    include spotify-albums-search-results
+            div(id="spotify-track" class="spotify-track")
+                if spotifySearch === true
+                    include spotify-tracks-search-result
 
-            else if collectionSearch === true
-                div(id="left", class="left")
-                    include album-search-result.pug
-                div(id="right", class="right")
-                    include album-search-result.pug
+            div(id="all-collection-albums-left" class="all-collection-albums-left")
+                    include all-albums-view
+            div(id="all-collection-albums-right" class="all-collection-albums-right")
+                    include all-albums-view
+
+            div(id="album-view-left", class="album-view-left")
+            div(id="album-view-right" class="album-view-right")
+
 
 script(src='scripts/scripts.js' type="text/javascript")

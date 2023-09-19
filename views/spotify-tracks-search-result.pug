@@ -1,0 +1,13 @@
+table(class="table")
+    th
+    th artists
+    th track name
+    th
+    each track in spotifyTracks
+        tr
+            td
+                img(class="trackImageOnSearchResult" id=track.spotifyId src=track.imagePath)
+            td= track.artists
+            td= track.name
+            td
+                button(id=track.spotifyId class="addTrackButton") add track

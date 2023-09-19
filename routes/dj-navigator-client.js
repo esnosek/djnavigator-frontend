@@ -17,21 +17,6 @@ async function spotifySearch(query) {
         });
 }
 
-async function albumsSearch(albumId) {
-    let options = {
-        method: "GET",
-        headers: {
-            "Content-Type": "application/json",
-            "Accept": "application/json"
-        }
-    }
-    return fetch(url + "/api/albums/" + albumId, options)
-        .then((res) => res.json())
-        .catch((err) => {
-            console.log("error occurred", err)
-        });
-}
-
 async function addSpotifyAlbum(spotifyAlbumId) {
     let options = {
         method: "POST",
@@ -92,11 +77,43 @@ async function getSpotifyTrack(spotifyTrackId) {
         });
 }
 
+async function getAlbums() {
+    let options = {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+        }
+    }
+    return fetch(url + "/api/albums", options)
+        .then((res) => res.json())
+        .catch((err) => {
+            console.log("error occurred", err)
+        });
+}
+
+async function getAlbum(albumId) {
+    let options = {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+        }
+    }
+    return fetch(url + "/api/albums/" + albumId, options)
+        .then((res) => res.json())
+        .catch((err) => {
+            console.log("error occurred", err)
+        });
+}
+
+
 export {
     spotifySearch,
-    albumsSearch,
     addSpotifyAlbum,
     getSpotifyAlbum,
     addSpotifyTrack,
-    getSpotifyTrack
+    getSpotifyTrack,
+    getAlbums,
+    getAlbum
 }

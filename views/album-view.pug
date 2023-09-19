@@ -1,23 +1,14 @@
+p COLLECTION ALBUM
 p
     img(class="album-view-image" src=album.imagePath)
 p !{album.artists}
 p !{album.name}
-p !{album.spotifyId}
-p
-    button(id=album.spotifyId class="addAlbumButton") add album
 
 table(class="table")
     tr
-        th
         th track name
         th tempo
-        th
-    each track in album.spotifyTracks
+    each track in album.tracks
         tr
-            td(class="button")
-                button(id=track.spotifyId class="addTrackButton") add track
-            td(class="track name")= track.name
-            td(class="tempo")= track.audioFeatures.tempo
-            td(class="checkbox")
-                input(type="checkbox", id="selected" + track.spotifyId)
-                label(for="selected" + track.spotifyId) select
+            td= track.name
+            td= track.tempo

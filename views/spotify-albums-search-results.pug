@@ -1,14 +1,14 @@
-table(id="albums-search-result", class="table")
+table(class="table")
     tr
         th
         th artists
         th album name
         th
-    each album in albums
-        tr()
-            td(class="image")
+    each album in spotifyAlbums
+        tr
+            td
                 img(class="albumImageOnSearchResult" id=album.spotifyId src=album.imagePath)
-            td(class="artists")= album.artists
-            td(class="name")= album.name
-            td(class="button")
+            td= album.artists
+            td= album.name
+            td
                 button(id=album.spotifyId class="addAlbumButton") add album
