@@ -1,13 +1,13 @@
 table(class="table")
     th
-    th artists
-    th track name
+    th Artists
+    th Track
     th
     each track in spotifyTracks
         tr
-            td
+            td(class="tableTdImg")
                 img(class="trackImageOnSearchResult" id=track.spotifyId src=track.imagePath)
             td= track.artists
             td= track.name
-            td
-                button(id=track.spotifyId class="addTrackButton") add track
+            td(class="tableTdButton")
+                button(id=track.spotifyId class="addTrackButton") +

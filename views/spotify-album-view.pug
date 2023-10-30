@@ -1,19 +1,19 @@
-p SPOTIFY ALBUM
+p Spotify album
 p
     img(class="album-view-image" src=spotifyAlbum.imagePath)
 p !{spotifyAlbum.artists}
 p !{spotifyAlbum.name}
 p
-    button(id=spotifyAlbum.spotifyId class="addAlbumButton") add album
+    button(id=spotifyAlbum.spotifyId class="addAlbumButton") Add album
 
 table(class="table")
     tr
-        th track name
-        th tempo
+        th Track
+        th Tempo
         th
     each track in spotifyAlbum.spotifyTracks
         tr
             td= track.name
             td= track.audioFeatures.tempo
             td
-                button(id=track.spotifyId class="addTrackButton") add track
+                button(id=track.spotifyId class="addTrackButton") Add track

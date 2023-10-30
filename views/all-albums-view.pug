@@ -1,6 +1,6 @@
-p ALL ALBUMS
-div(id='albums', class="flex-container")
+p(class="all_albums_title") All albums
+div(id='albums', class="all_albums_container")
     each album in albums
-        div(class="container")
+        div(class="single_album")
             img(id=album.id class="allAlbumsImage" src=album.imagePath)
             div(class="bottom-left")= album.name

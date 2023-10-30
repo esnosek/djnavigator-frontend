@@ -1,14 +1,24 @@
-p COLLECTION ALBUM
 p
     img(class="album-view-image" src=album.imagePath)
 p !{album.artists}
 p !{album.name}
+p
+    button(id=album.id class="deleteAlbumButton") Delete album
 
 table(class="table")
     tr
-        th track name
-        th tempo
+        th(style="display: none;")
+        th Track
+        th Tempo
+        th Pitch
+        th(style="display: none;")
     each track in album.tracks
-        tr
+        tr(onclick="checkMe(this, '" + track.id + "')")
+            td(style="display: none;")
+                input(id=track.id type="radio" name="radioName")
+                label(for=track.id) CLICK
             td= track.name
             td= track.tempo
+            td(id=track.id name="pitchSetting" class="pitch")
+            td(style="display: none;" id=album.id)
+                button(id=track.id class="deleteTrackButton") delete track

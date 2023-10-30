@@ -1,4 +1,12 @@
+body {
+    margin:0;
+    color: #E3E3E6;
+    background-color: #131217;
+}
+
 .spotify-search {
+    font-size: 40px;
+    font-weight: bold;
     grid-area: spotify-search;
 }
 
@@ -10,110 +18,153 @@
     grid-area: spotify-album;
 }
 
-.collection-albums-left {
-    grid-area: collection-albums-left;
+.all-collection-albums-left {
+    grid-area: all-collection-albums-left;
+    background-color: #1a191f;
 }
 
-.collection-albums-right {
-    grid-area: collection-albums-right;
+.all-collection-albums-right {
+    grid-area: all-collection-albums-right;
+    background-color: #1a191f;
 }
 
-.collection-left {
-    grid-area: collection-left;
+.album-view-left {
+    grid-area: album-view-left;
 }
 
-.collection-right {
-    grid-area: collection-right;
-}
-
-.left {
-    grid-area: left;
-}
-
-.right {
-    grid-area: right;
-}
-
-.main {
-    grid-area: main;
-}
-
-.quantity {
-    resize: none;
-}
-
-.portionQuantityInput {
-    width: 4em;
+.album-view-right {
+    grid-area: album-view-right;
 }
 
 .grid-container {
     display: grid;
+    margin: 0px;
     grid-template-columns: 1fr 1fr;
     grid-template-areas:
     'spotify-search spotify-search'
     'spotify-album spotify-track'
-    'collection-albums-left collection-albums-right'
-    'collection-left collection-right';
-    grid-gap: 5px;
-    background-color: #265B6A;
-    padding: 5px;
+    'all-collection-albums-left all-collection-albums-right'
+    'album-view-left album-view-right';
+    grid-gap: 24px;
+    padding: 64px 32px 64px 32px;
 }
 
 .grid-container > div {
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: rgba(255, 255, 255, 0.9);
+    font-family: 'Karla', sans-serif;
+    font-style: normal;
     text-align: center;
-    padding: 20px 10px 20px 10px;
+    border-radius: 8px;
+}
+
+.spotify_search_input{
+    border:none;
+    padding: 16px 32px;
+    border-radius: 100px;
+    background-color: #1a191f;
+    color: #CACACD;
+    width: 400px;
+    position: center;
+    font-family: 'Karla', sans-serif;
+    font-size: 20px;
+}
+
+.spotify_search_button{
+    visibility: hidden;
 }
 
 .table {
-    table-layout: fixed;
+    table-layout: auto;
     border-collapse: collapse;
-    font-size: 13px;
+    border-radius: 8px;
+    font-size: 16px;
     width: 100%;
+    background-color: #1a191f;
 }
+
+
+.table tr img {
+    cursor: pointer;
+    width: 100px;
+    height: 100px;
+}
+
+.tableTdImg {
+    text-align: center;
+}
+
+.tableTdButton {
+    text-align: center;
+}
+
+.addAlbumButton, .addTrackButton, .deleteAlbumButton {
+    padding: 8px 16px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 100px;
+    border:none;
+    background-color: #493B53;
+    cursor: pointer;
+    color: #131217;
+}
+
+.addAlbumButton:hover, .addTrackButton:hover, .deleteAlbumButton:hover {
+    background-color: #B28C00;
+    transition: 0.2s;
+}
+
 .table td, .table th {
-    border: 1px solid #ddd;
     padding: 8px;
 }
 
-.table tr:nth-child(even){background-color: #f2f2f2;}
-
-.table tr:hover {background-color: rgba(38, 91, 106, 0.199);}
+.table tr:hover {
+    background-color: #26242e;
+}
 
 .table th {
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
-    background-color: #265B6A;
-    color: white;
+    background-color: #2f2735;
+    font-size: 14px;
+    font-weight: lighter;
+    color: #CACACD;
 }
 
-.container {
-    font-size: 11px;
-    position: relative;
-    text-align: center;
-    color: white;
+.all_albums_container {
+    align-items: flex-start;
+    justify-content: space-evenly;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.all_albums_title{
+    font-size: 20px;
+}
+
+.single_album {
+    margin: 5px;
+    float: left;
+    width: 200px;
+    padding: 4px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.single_album:hover {
+    background-color: #B28C00;
+    color: #1a191f;
+    font-weight: bold;
+
 }
 
 .bottom-left {
-    position: absolute;
-    bottom: 2px;
-    left: 4px;
+    padding: 15px;
+    text-align: center;
 }
 
-.flex-container {
-    align-items: flex-start;
-    justify-content: space-around;
-    display: flex;
-    flex-wrap: wrap;
-    background-color: #265B6A;
-}
-
-img {
-    width: 70px;
-    height: 70px;
-    margin: 0px;
+.allAlbumsImage {
+    width: 200px;
+    height: 200px;
 }
 
 .album-view-image {
@@ -125,11 +176,5 @@ img {
 .track-view-image {
     width: 300px;
     height: 300px;
-    margin: 10px;
-}
-
-.allAlbumsImage{
-    width: 100px;
-    height: 100px;
     margin: 10px;
 }

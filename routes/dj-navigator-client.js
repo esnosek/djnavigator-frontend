@@ -1,6 +1,6 @@
-import config from '../config/config.js'
+import 'dotenv/config'
 
-const url = "http://" + config.djNavigator.host + ":" + config.djNavigator.port
+const url = "http://" + process.env.DJ_NAVIGATOR_BACKEND_HOST + ":" + process.env.DJ_NAVIGATOR_BACKEND_PORT
 
 async function spotifySearch(query) {
     let options = {
@@ -107,6 +107,48 @@ async function getAlbum(albumId) {
         });
 }
 
+async function deleteAlbum(albumId) {
+    let options = {
+        method: "DELETE",
+        headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+        }
+    }
+    return fetch(url + "/api/albums/" + albumId, options)
+        .catch((err) => {
+            console.log("error occurred", err)
+        });
+}
+
+async function deleteTrack(trackId) {
+    let options = {
+        method: "DELETE",
+        headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+        }
+    }
+    return fetch(url + "/api/tracks/" + trackId, options)
+        .catch((err) => {
+            console.log("error occurred", err)
+        });
+}
+
+async function getMix(staticTrackId, dynamicTrackId) {
+    let options = {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+        }
+    }
+    return fetch(url + "/api/mix?staticTrackId=" + staticTrackId + "&dynamicTrackId=" + dynamicTrackId)
+        .then((res) => res.json())
+        .catch((err) => {
+            console.log("error occurred", err)
+        });
+}
 
 export {
     spotifySearch,
@@ -115,5 +157,8 @@ export {
     addSpotifyTrack,
     getSpotifyTrack,
     getAlbums,
-    getAlbum
+    getAlbum,
+    deleteAlbum,
+    deleteTrack,
+    getMix
 }
